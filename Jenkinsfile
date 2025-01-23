@@ -1,12 +1,10 @@
 pipeline {
   agent any
-  tools {
-    maven 'maven39'
-  }
   stages {
     stage('Build') {
       steps {
         sh 'mvn clean package -DskipTests=true'
+        archiveArtifacts 'target/hello-demo-*.jar'
       }
     }
 
@@ -16,5 +14,8 @@ pipeline {
       }
     }
 
+  }
+  tools {
+    maven 'maven39'
   }
 }
