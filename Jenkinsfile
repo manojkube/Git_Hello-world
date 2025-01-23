@@ -33,7 +33,7 @@ pipeline {
         sh "sleep ${params.sleep}"
         sh 'echo Integration Testing'
         sh "curl -s http://localhost:${params.port}/hello"
-     }
+      }
     }
  }
 }
