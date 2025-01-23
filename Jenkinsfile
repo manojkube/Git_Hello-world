@@ -4,6 +4,11 @@ pipeline {
     maven 'maven39'
   }
   stages {
+    stage("Echo"0 {
+      steps {
+        sh 'echo Hello'
+        sh "echo branch_name - ${params.branch}, Port - ${params.port}, sleep - ${params.sleep}"
+  stages {
     stage('Build') {
       steps {
         sh 'mvn clean package -DskipTests=true'
@@ -24,8 +29,8 @@ pipeline {
     }
     stage('Unit Test') {
       steps {
-        sh 'sleep 10'
-        sh 'curl -s http://localhost:6767/hello'
+        sh "sleep ${params.sleep}"
+        sh "curl -s http://localhost:${params.port}/hello"
      }
     }
  }
