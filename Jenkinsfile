@@ -8,7 +8,8 @@ pipeline {
       steps {
         sh 'echo Hello'
         sh "echo branch_name - ${params.branch}, Port - ${params.port}, sleep - ${params.sleep}"
-  stages {
+      }
+    }
     stage('Build') {
       steps {
         sh 'mvn clean package -DskipTests=true'
