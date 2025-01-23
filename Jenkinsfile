@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+    maven 'maven39'
+  }
   stages {
     stage('Build') {
       steps {
@@ -25,8 +28,5 @@ pipeline {
         sh 'curl -s http://localhost:6767/hello'
      }
     }
-  tools {
-    maven 'maven39'
-  }
  }
 }
