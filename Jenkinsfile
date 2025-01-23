@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'mvn clean package -DskipTests=true'
-        archiveArtifacts '/Users/manoj/.jenkins/workspace/Git_Hello-world_main/target/hello-demo-*.jar'
+        archiveArtifacts 'target/hello-demo-*.jar'
       }
     }
 
