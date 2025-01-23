@@ -23,8 +23,10 @@ pipeline {
       steps {
         sh 'sleep 10'
         sh 'curl -s http://localhost:6767/hello'
-  }
+     }
+    }
   tools {
     maven 'maven39'
   }
+ }
 }
