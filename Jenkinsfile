@@ -30,8 +30,8 @@ pipeline {
     }
     stage('Unit Test') {
       steps {
-        sh "sleep ${params.sleep}"
         sh 'echo Integration Testing'
+        sh "sleep ${params.sleep}"
         sh "curl -s http://localhost:${params.port}/hello"
       }
     }
