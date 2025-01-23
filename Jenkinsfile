@@ -14,7 +14,15 @@ pipeline {
         junit(testResults: 'target/surefire-reports/TEST-*.xml', keepProperties: true, keepTestNames: true)
       }
     }
-
+    stage('Deploy') {
+      steps {
+        sh """ java -jar target/hello-demo-*.jar > dev/null &  """
+      }
+    }
+    stage('Unit Test') {
+      steps {
+        sh 'sleep 10'
+        sh 'curl -s http://localhost:6767/hello'
   }
   tools {
     maven 'maven39'
