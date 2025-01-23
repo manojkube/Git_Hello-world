@@ -4,7 +4,7 @@ pipeline {
     maven 'maven39'
   }
   stages {
-    stage("Echo"0 {
+    stage('echo') {
       steps {
         sh 'echo Hello'
         sh "echo branch_name - ${params.branch}, Port - ${params.port}, sleep - ${params.sleep}"
