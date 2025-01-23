@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+    maven 'maven39'
+  }
   stages {
     stage('Build') {
       steps {
@@ -13,8 +16,5 @@ pipeline {
       }
     }
 
-  }
-  tools {
-    maven 'maven39'
   }
 }
